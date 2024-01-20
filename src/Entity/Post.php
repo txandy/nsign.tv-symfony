@@ -71,7 +71,7 @@ class Post
             'id' => $this->getId(),
             'title' => $this->getTitle(),
             'body' => $this->getBody(),
-            'created_at' => $this->getCreatedAt()->format('Y-m-d H:i:s')
+            'created_at' => $this->getCreatedAt()?->format('Y-m-d H:i:s')
         ];
     }
 }
