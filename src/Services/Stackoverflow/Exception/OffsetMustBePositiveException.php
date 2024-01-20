@@ -2,7 +2,7 @@
 
 namespace App\Services\Stackoverflow\Exception;
 
-class SortAcceptedParamsException extends \Exception
+class OffsetMustBePositiveException extends \Exception
 {
     public function __construct($message, $code = 400, \Throwable $previous = null)
     {
