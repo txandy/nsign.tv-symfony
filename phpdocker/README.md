@@ -30,7 +30,7 @@ add your own hostname on your `/etc/hosts`
 
 Service|Address outside containers
 -------|--------------------------
-Webserver|[localhost:50000](http://localhost:50000)
+Webserver|[localhost:80](http://localhost:80)
 
 ## Hosts within your environment ##
 
