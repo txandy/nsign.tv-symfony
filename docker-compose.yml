@@ -13,6 +13,7 @@ services:
     php-fpm:
         environment:
             PHP_IDE_CONFIG: "serverName=Docker"
+            GOOGLE_APPLICATION_CREDENTIALS: '/application/var/storage/client_secret.json'
         build: phpdocker/php-fpm
         working_dir: /application
         volumes:
