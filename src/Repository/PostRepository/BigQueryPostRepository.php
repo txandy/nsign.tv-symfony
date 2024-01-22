@@ -36,7 +36,7 @@ class BigQueryPostRepository implements PostRepository
             $post = new Post();
             $post->setTitle($row['title']);
             $post->setBody($row['body']);
-            $post->setCreatedAt(new \DateTimeImmutable($row['creation_date']));
+            $post->setCreatedAt(new \DateTimeImmutable((string)$row['creation_date']));
 
             $response->addPost($post);
         }
