@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller\Api\Stackoverflow;
 
 use App\Repository\PostRepository\PostRepository;
@@ -18,12 +20,10 @@ class GetPostsController extends AbstractController
     #[Route('/api/stackoverflow/get-posts', name: 'app_api_stackoverflow_get_posts')]
     public function index(Request $request): JsonResponse
     {
-        // Filters
         $limit = $request->query->get('limit', 10);
         $offset = $request->query->get('offset', 0);
-        $sort = $request->query->get('sort', 'DESC');
+        $sort = $request->query->get('sort', GetPosts::DESC);
 
-        // Get posts
         try {
             $posts = (new GetPosts($this->postRepository))((int)$limit, (int)$offset, (string)$sort);
         } catch (\Exception $e) {
